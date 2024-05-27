@@ -1,45 +1,58 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/src/styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="/src/styles.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Tauri App</title>
     <script type="module" src="/src/main.ts" defer></script>
-  </head>
+</head>
 
-  <body>
-    <div class="container">
-      <h1>Welcome to Tauri!</h1>
+<body>
+<div class="container">
+    <h1 id="greeting"></h1>
 
-      <div class="row">
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/src/assets/vite.svg" class="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img
-            src="/src/assets/tauri.svg"
-            class="logo tauri"
-            alt="Tauri logo"
-          />
-        </a>
-        <a href="https://www.typescriptlang.org/docs" target="_blank">
-          <img
-            src="/src/assets/typescript.svg"
-            class="logo typescript"
-            alt="typescript logo"
-          />
-        </a>
-      </div>
-
-      <p>Click on the Tauri logo to learn more about the framework</p>
-
-      <form class="row" id="greet-form">
-        <input id="greet-input" placeholder="Enter a name..." />
-        <button type="submit">Greet</button>
-      </form>
-
-      <p id="greet-msg"></p>
-    </div>
-  </body>
+    <form id="post-editor">
+        <label for="editor">Post:</label>
+        <div class="editor-platforms">
+            <!-- Create the editor container -->
+            <div id="editor">
+                <p>Hello World!</p>
+                <p>Some initial <strong>bold</strong> text</p>
+                <p><br/></p>
+            </div>
+            <div id="platforms"
+                 style="display: flex; flex-direction: column; align-items: flex-start; margin-left: 20px;">
+                <label for="twitter">
+                    <input type="checkbox" id="twitter" name="platform" value="twitter">
+                    Twitter
+                </label>
+                <label for="facebook">
+                    <input type="checkbox" id="facebook" name="platform" value="facebook">
+                    Facebook
+                </label>
+                <label for="instagram">
+                    <input type="checkbox" id="instagram" name="platform" value="instagram">
+                    Instagram
+                </label>
+                <!-- Add more platforms as needed -->
+            </div>
+        </div>
+        <div>
+            <label for="attachments">Attachments:</label>
+            <input type="file" id="attachments" name="attachments" multiple/>
+            <button type="submit">Submit</button>
+            <button type="reset">Clear</button>
+        </div>
+    </form>
+    <div id="time"><p></p></div>
+    <button id="settings">Settings</button>
+</div>
+<!-- Initialize Quill editor -->
+<script>
+  const quill = new Quill('#editor', {
+    theme: 'snow'
+  });
+</script>
+</body>
 </html>
