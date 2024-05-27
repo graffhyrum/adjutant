@@ -1,0 +1,20 @@
+
+- Core flow
+  - [ ] Select files
+  - [ ] Set Text
+  - Post
+    - [ ] Twitter
+    - [ ] Threads
+    - [ ] Tumblr
+    - [ ] BlueSky
+    - [ ] Discord
+- Features
+    - [ ] Images
+        - [ ] static (png, jpg)
+        - [ ] animated (gif, webp)
+    - [ ] Video
+    - [ ] Multiple files
+    - [ ] Emoji
+    - [ ] Markdown
+    - [ ] 2FA
+    - [ ] Drafts
